@@ -16,5 +16,4 @@ Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
     [x] bootswatch
     [x] react-dom
     [x] react-router-dom
-    [x] react-scripts
     [x] styled-components
