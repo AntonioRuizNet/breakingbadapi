@@ -6,6 +6,9 @@ export const getAllCharacters = () => {
     .then((res) => res.json())
     .then((response) => {
       return response;
+    })
+    .catch(function (error) {
+      console.log("Hubo un problema con la petición Fetch:" + error.message);
     });
 };
 
@@ -15,5 +18,8 @@ export const getCharacter = (id) => {
     .then((res) => res.json())
     .then((response) => {
       return response;
+    })
+    .catch(function (error) {
+      console.log("Hubo un problema con la petición Fetch:" + error.message);
     });
 };

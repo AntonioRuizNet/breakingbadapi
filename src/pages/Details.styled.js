@@ -8,8 +8,8 @@ export const CardStyled = styled.div`
 export const ImgStyled = styled.div`
   background-image: url(${(props) => props.image});
   width: 100%;
-  height: 300px;
-  background-position: center;
+  height: 500px;
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 5px;

@@ -1,9 +1,12 @@
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
+import { UserContext } from "../container/Container";
 
 //Styles
 import './Navigation.css'
 
-export const Navigation = () => {
+export const Navigation = (props) => {
+    const lang = useContext(UserContext);
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light bg-light px-5">
@@ -15,9 +18,13 @@ export const Navigation = () => {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link to="/"><a className="nav-link active" aria-current="page">Inicio</a></Link>
+                                <Link to="/"><a className="nav-link active" aria-current="page">{props.language[lang].Inicio}</a></Link>
                             </li>
                         </ul>
+                        <select value={lang} onChange={props.handLang} className="form-inline my-2 my-lg-0">
+                            <option value="ES">ES</option>
+                            <option value="EN">EN</option>
+                        </select>
                     </div>
                 </div>
             </nav>

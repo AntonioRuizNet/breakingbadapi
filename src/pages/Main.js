@@ -1,9 +1,9 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect, useContext } from "react";
 
 //Components
+import { Container } from "../components/container/Container";
 import { Card } from "../components/card/Card";
 import { Pagination } from "../components/pagination/Pagination";
-import { Navigation } from "../components/navigation/Navigation";
 
 //Styles
 import "bootswatch/dist/yeti/bootstrap.min.css";
@@ -30,22 +30,23 @@ export default function Main() {
 
   return (
     <Fragment>
-      <Navigation />
-      <MainStyled>
-        {characters.length > 0 &&
-          characters
-            .filter((el, index) => {
-              return index > page * 10 - 1 && index < page * 10 + itemsPage;
-            })
-            .map((e) => {
-              return <Card info={e} />;
-            })}
-      </MainStyled>
-      <Pagination
-        page={page}
-        maxelements={characters.length}
-        setPage={changePage}
-      />
+      <Container>
+        <MainStyled>
+          {characters.length > 0 &&
+            characters
+              .filter((el, index) => {
+                return index > page * 10 - 1 && index < page * 10 + itemsPage;
+              })
+              .map((e) => {
+                return <Card info={e} />;
+              })}
+        </MainStyled>
+        <Pagination
+          page={page}
+          maxelements={characters.length}
+          setPage={changePage}
+        />
+      </Container>
     </Fragment>
   );
 }
