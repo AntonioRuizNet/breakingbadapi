@@ -25,7 +25,6 @@ export const getCharacter = (id) => {
 };
 
 export const getCharacterQuote = (id) => {
-  //const url = `${baseUrl}/quotes/${id}`;
   const url = `${baseUrl}/quote/random?id=${id}`;
   return fetch(url)
     .then((res) => res.json())

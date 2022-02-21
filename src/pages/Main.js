@@ -20,7 +20,6 @@ export default function Main() {
   useEffect(() => {
     getAllCharacters().then((res) => {
       setCharacters(res);
-      console.log(res);
     });
   }, [page]);
 

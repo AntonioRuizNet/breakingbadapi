@@ -1,15 +1,20 @@
-# Getting Started with Create React App
+# Breaking Bad Api
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Proyecto basado en la api: [https://www.breakingbadapi.com/api](https://www.breakingbadapi.com/api)
 
-## Available Scripts
+## Scripts
 
-In the project directory, you can run:
+Para arrancar el proyecto:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Para ver el proyecto.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Dependencias
+
+    [x] bootswatch
+    [x] react-dom
+    [x] react-router-dom
+    [x] react-scripts
+    [x] styled-components

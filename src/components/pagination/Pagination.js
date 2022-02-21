@@ -12,7 +12,7 @@ export const Pagination = ({ page, maxelements, setPage }) => {
   return (
     <PaginationBlock>
       {pageNumbers.map((number) => (
-        <a onClick={() => setPage(number)}>
+        <a key={number} onClick={() => setPage(number)}>
           <PaginationStyled>{number + 1}</PaginationStyled>
         </a>
       ))}
