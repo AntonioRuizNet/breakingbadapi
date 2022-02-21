@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { Container } from "../components/container/Container";
 
 //Services
-import { getCharacter } from "../services/requests";
+import { getCharacter, getCharacterQuote } from "../services/requests";
 
 //Styles
 import { CardStyled, ImgStyled } from "./Details.styled";
@@ -13,9 +13,14 @@ import { CardStyled, ImgStyled } from "./Details.styled";
 export default function Details() {
   const { id } = useParams();
   const [character, setCharacter] = useState([]);
+  const [quote, setQuote] = useState([]);
   useEffect(() => {
     getCharacter(id).then((res) => {
       setCharacter(res);
+      console.log(res);
+    });
+    getCharacterQuote(id).then((res) => {
+      setQuote(res);
       console.log(res);
     });
   }, []);
@@ -40,6 +45,10 @@ export default function Details() {
                 </p>
                 <p>
                   Estado: <b>{e.status}</b>
+                </p>
+                <p>
+                  Frase célebre:{" "}
+                  <b>{quote[0]?.quote ? quote[0].quote : "Not found."}</b>
                 </p>
               </div>
             </div>
